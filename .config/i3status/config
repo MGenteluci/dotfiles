@@ -13,6 +13,8 @@ general {
 
 order += "wireless _first_"
 order += "battery all"
+order += "cpu_usage"
+order += "memory"
 order += "tztime local"
 
 wireless _first_ {
@@ -27,6 +29,15 @@ battery all {
         status_full = "🔌"
 }
 
+cpu_usage {
+        format = "CPU %usage"
+}
+
+
+memory {
+        format = "RAM %percentage_used"
+}
+
 tztime local {
-        format = "%d/%m/%Y %H:%M"
+        format = "%a %d/%m/%Y %H:%M"
 }
