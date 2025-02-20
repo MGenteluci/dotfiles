@@ -190,6 +190,7 @@ assign [class="Code"] $ws2
 assign [class="Gnome-terminal"] $ws3
 
 for_window [workspace=$ws2] layout stacked
+for_window [floating] move absolute position center
 
 exec firefox
 exec code
@@ -197,3 +198,6 @@ exec gnome-terminal
 exec "setxkbmap -model abnt2 -layout br"
 
 bindsym Print exec "flameshot gui"
+
+exec_always "xset -dpms"
+exec_always "xset s off"
