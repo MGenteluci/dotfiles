@@ -1,5 +1,8 @@
 .PHONY: all
-all: i3 i3status
+all: bashrc i3 i3status
+
+bashrc:
+	ln -s $$PWD/.bashrc $$HOME/.bashrc
 
 i3:
 	ln -s $$PWD/.config/i3/config $$HOME/.config/i3/config

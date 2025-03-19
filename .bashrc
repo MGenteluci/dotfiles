@@ -107,4 +107,9 @@ export GOPATH=$(asdf where golang)/packages
 export GOROOT=$(asdf where golang)/go
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.asdf/shims
+export PATH=$PATH:$HOME/git/hydra/hydra-pdv/scripts
 export PATH="${PATH}:$(go env GOPATH)/bin"
+
+export KUBECONFIG=$HOME/.kube/config
+
+. ~/.asdf/plugins/java/set-java-home.bash
