@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -183,11 +183,13 @@ bar {
 # Lock screen
 bindsym $mod+q exec i3lock
 
-# force certain applications to load on specific workspaces
 assign [class="firefox"] $ws1
 assign [class="Code"] $ws2
-# assign [class="jetbrains-idea-ce"] $ws2
+assign [class="jetbrains-idea-ce"] $ws2
 assign [class="Gnome-terminal"] $ws3
+assign [class="teams-for-linux"] $ws4
+assign [class="obsidian"] $ws5
+assign [class="bruno"] $ws5
 
 for_window [workspace=$ws2] layout stacked
 for_window [floating] move absolute position center
@@ -198,6 +200,8 @@ exec gnome-terminal
 exec "setxkbmap -model abnt2 -layout br"
 
 bindsym Print exec "flameshot gui"
+
+bindsym F4 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 exec_always "xset -dpms"
 exec_always "xset s off"

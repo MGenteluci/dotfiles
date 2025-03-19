@@ -33,7 +33,6 @@ cpu_usage {
         format = "CPU %usage"
 }
 
-
 memory {
         format = "RAM %percentage_used"
 }
