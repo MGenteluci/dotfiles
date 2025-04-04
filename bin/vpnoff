@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PIDS=`ps -ef | grep globalprotect | grep -v grep | awk '{print $2}'`
+sdpass | sudo -S kill -9 $PIDS

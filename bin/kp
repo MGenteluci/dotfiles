@@ -1,0 +1,9 @@
+#!/bin/bash
+
+process_name=$1
+
+if [ "$process_name" = 'teams' ]; then
+    process_name="teams-for-linux"
+fi
+
+ps aux | grep $1 | awk '{print $2}' | head -n -1 | xargs sudo kill -9

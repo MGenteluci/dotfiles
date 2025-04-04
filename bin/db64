@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xclip -o -sel clipboard | base64 -d | xclip -sel clip

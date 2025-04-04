@@ -60,8 +60,13 @@ parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+prompt_k8s(){
+  k8s_current_context=$(kubectl config current-context 2> /dev/null)
+  if [[ $? -eq 0 ]] ; then echo -e "(${k8s_current_context})"; fi
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[1;96m\]\w\[\033[00m\] \[\033[1;92m\]$(parse_git_branch)\[\033[00m\] $ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[1;96m\]\w\[\033[00m\] \[\033[1;92m\]$(parse_git_branch)\[\033[00m\] \[\033[1;91m\]$(prompt_k8s)\[\033[00m\] $ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch) \$ '
 fi
