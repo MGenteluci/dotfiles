@@ -110,7 +110,7 @@ alias bashrc='code ~/.bashrc'
 
 export GOPATH=$(asdf where golang)/packages
 export GOROOT=$(asdf where golang)/go
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:$HOME/.asdf/shims
 export PATH=$PATH:$HOME/git/hydra/hydra-pdv/scripts
 export PATH="${PATH}:$(go env GOPATH)/bin"
