@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "CHANGEME" | xclip -sel clip
