@@ -1,0 +1,8 @@
+aliases:
+  dp: deployments
+  sales: deployments sales-api
+  state: deployments pos-state
+  post: deployments hydra-post-elasticsearch
+  talos: deployments talos
+  os: deployments observability-system
+  insu: deployments insurance-gateway
